@@ -1,0 +1,183 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A000000">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/backwardRL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="40dp">
+
+                <ImageView
+                    android:id="@+id/exo_rew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_vector_backward"
+                    android:tint="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="-10"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="9sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/playPauseRL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/backwardRL">
+
+                <ImageButton
+                    android:id="@id/exo_play"
+                    style="@style/ExoMediaButton.Play"
+                    android:src="@drawable/ic_vector_play"
+                    android:visibility="gone" />
+
+                <ImageButton
+                    android:id="@id/exo_pause"
+                    style="@style/ExoMediaButton.Pause"
+                    android:src="@drawable/ic_vector_pause" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/forwardRL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40dp"
+                android:layout_toRightOf="@+id/playPauseRL">
+
+                <ImageView
+                    android:id="@+id/exo_ffwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_vector_forward" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="+10"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="9sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="10dp">
+
+            <RelativeLayout
+                android:id="@+id/seekBarRL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/relative">
+
+                <TextView
+                    android:id="@id/exo_position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="9sp" />
+
+                <TextView
+                    android:id="@+id/separatorTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/exo_position"
+                    android:fontFamily="@font/roboto_medium"
+                    android:includeFontPadding="false"
+                    android:text="/"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="9sp" />
+
+                <TextView
+                    android:id="@id/exo_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/separatorTV"
+                    android:fontFamily="@font/roboto_medium"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="9sp" />
+
+                <com.google.android.exoplayer2.ui.DefaultTimeBar
+                    android:id="@id/exo_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="26dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/exo_duration"
+                    app:bar_height="2dp"
+                    app:buffered_color="@color/colorWhite"
+                    app:played_color="@color/colorPrimary"
+                    app:scrubber_color="@color/colorPrimary"
+                    app:unplayed_color="#E6FFFFFF" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true">
+
+                <RelativeLayout
+                    android:id="@+id/resizeRL"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/resize_icon" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/verticalResizeRL"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/resize_icon" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,75 @@
+{
+	"status": 1,
+	"data": [
+		{
+			"section_type": "trending",
+			"value": {
+				"section_title": "Trending",
+				"slug": ""
+			}
+		},
+		{
+			"section_type": "latest",
+			"value": {
+				"section_title": "Latest",
+				"slug": ""
+			}
+		},
+		{
+			"section_type": "category",
+			"value": {
+				"section_title": "Categories",
+				"slug": ""
+			}
+		},
+		{
+			"section_type": "category_details",
+			"value": {
+				"section_title": "IQ and Brain Teasers",
+				"slug": "iq-and-brain-teasers"
+			}
+		},
+		{
+			"section_type": "category_details",
+			"value": {
+				"section_title": "Movies",
+				"slug": "movies"
+			}
+		},
+		{
+			"section_type": "category_details",
+			"value": {
+				"section_title": "Music",
+				"slug": "music"
+			}
+		},
+		{
+			"section_type": "category_details",
+			"value": {
+				"section_title": "Picture Quizzes",
+				"slug": "picture-quizzes"
+			}
+		},
+		{
+			"section_type": "category_details",
+			"value": {
+				"section_title": "TV",
+				"slug": "tv"
+			}
+		},
+		{
+			"section_type": "category_details",
+			"value": {
+				"section_title": "Pop Culture",
+				"slug": "popculture"
+			}
+		},
+		{
+			"section_type": "category_details",
+			"value": {
+				"section_title": "Sports",
+				"slug": "sports"
+			}
+		}
+	]
+}

@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">OkTested</string>
+    <string name="signUp_login" translatable="false">Signup/Login</string>
+    <string name="mobile" translatable="false">Enter mobile number</string>
+    <string name="signup_here" translatable="false">Continue</string>
+    <string name="facebook" translatable="false">Continue with Facebook</string>
+    <string name="google" translatable="false">Continue with Google</string>
+    <string name="mobile_error" translatable="false">Please enter mobile number</string>
+    <string name="mobile_not_valid" translatable="false">Please enter valid mobile number</string>
+
+    <string name="facebook_app_id">277911182911492</string>
+    <string name="fb_login_protocol_scheme">fb277911182911492</string>
+    <string name="default_web_client_id">199964006052-5q4anfd7rvlh70decq3nikabl3mc7qvu.apps.googleusercontent.com</string>
+
+    <string name="please_check_internet_connection" translatable="false">Please check internet connection</string>
+    <string name="logout_text" translatable="false">Are you sure you want to logout ?</string>
+    <string name="clear_cache_text" translatable="false">Are you sure you want to clear app cache ?</string>
+    <string name="share_url" translatable="false">https://oktapi.scoopwhoop.com/videos/</string>
+    <string name="post_share_url" translatable="false">https://oktapi.scoopwhoop.com/posts/</string>
+    <string name="quiz_share_url" translatable="false">https://oktapi.scoopwhoop.com/quiz/</string>
+    <string name="common_play_store_url" translatable="false">https://oktested.page.link/download</string>
+    <string name="string_download" translatable="false">Download OkTested App :</string>
+    <string name="play_agains">Play against multiple friends in a quiz room</string>
+    <string name="title_home">HOME</string>
+    <string name="title_search">SEARCH</string>
+    <string name="title_favourite">FAVOURITE</string>
+    <string name="title_inbox">INBOX</string>
+    <string name="title_menu">MENU</string>
+
+    // DO NOT TRANSLATE
+    <string name="bit_rate_value_with_unit">%d kbps</string>
+    <string name="frame_rate_value_with_unit">%d fps</string>
+
+    // Banner Ad Codes
+    // /145115460/OkTested-AOS/OkTested_AOS_HP_ATF
+    <string name="home_page_top_ad">/6499/example/banner</string>
+
+    // /145115460/OkTested-AOS/OkTested_AOS_HP_BTF
+    <string name="home_page_bottom_ad">/6499/example/banner</string>
+
+    // /145115460/OkTested-AOS/OkTested_AOS_HP_MID
+    <string name="home_page_middle_ad">/6499/example/banner</string>
+
+    // /145115460/OkTested-AOS/OkTested_AOS_ROS_ATF
+    <string name="except_home_page_top_ad">/6499/example/banner</string>
+
+    // /145115460/OkTested-AOS/OkTested_AOS_ROS_BTF
+    <string name="except_home_page_bottom_ad">/6499/example/banner</string>
+
+    // /145115460/OkTested-AOS/OkTested_AOS_ROS_MID
+    <string name="except_home_page_middle_ad">/6499/example/banner</string>
+
+    // Interstitial Ad Codes
+    // /145115460/OkTested-AOS/OkTested_AOS_INT
+    <string name="interstitial_ad">/6499/example/interstitial</string>
+
+    // /145115460/OkTested-AOS/OkTested_AOS_INT_EXT
+    <string name="exit_interstitial_ad">/6499/example/interstitial</string>
+
+    // Test Ad Codes
+    <string name="banner_test_ad">/6499/example/banner</string>
+    <string name="interstitial_test_ad">/6499/example/interstitial</string>
+
+    <string name="asset_statements" translatable="false">[{ \"include\": \"https://stageoktapi.scoopwhoop.com/.well-known/assetlinks.json\" }]</string>
+</resources>

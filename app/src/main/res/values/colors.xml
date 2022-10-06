@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F81761</color>
+    <color name="colorPrimaryDark">#161616</color>
+    <color name="colorAccent">#FFEC41</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="trans_bg_play">#3B070603</color>
+    <color name="colorBackground">#212121</color>
+    <color name="colorBottomBar">#272727</color>
+    <color name="colorHeader">#32FFCE</color>
+    <color name="colorGrey">#727272</color>
+    <color name="colorLightGrey">#C4C4C4</color>
+    <color name="viewColor">#d3d3d3</color>
+    <color name="colorLightGreen">#7B6F07</color>
+    <color name="colorButtonDisable">#706F6F</color>
+    <color name="colorSilver">#716F6f</color>
+    <color name="colorDecline">#9A9A99</color>
+    <color name="blackOverlayColor">#151515</color>
+    <color name="transparent_75_white">#ACFFFFFF</color>
+    <color name="unreadyColor">#F0ECEC</color>
+    <color name="colorblack">#343434</color>
+    <color name="graph1">#F81761</color>
+    <color name="graph2">#FF6195</color>
+    <color name="graph3">#14CA9E</color>
+    <color name="graph4">#32FFCE</color>
+    <color name="graph5">#FFEC41</color>
+    <color name="graph6">#FFFFFF</color>
+    <color name="graph7">#AE956D</color>
+    <color name="graph8">#806641</color>
+    <color name="graph9">#6E7587</color>
+</resources>

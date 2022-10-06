@@ -1,0 +1,113 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: "com.bugsnag.android.gradle"
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.oktested"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 27
+        versionName "2.1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.firebase:firebase-invites:17.0.0'
+    implementation 'com.google.firebase:firebase-dynamic-links:19.1.1'
+    implementation 'androidx.room:room-runtime:2.2.5'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.8'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+    implementation 'com.google.android:flexbox:0.3.0'
+    implementation 'io.agora.rtc:full-sdk:3.2.0'
+    implementation "android.arch.lifecycle:extensions:4.0.1"
+    implementation 'com.daimajia.androidanimations:library:2.4@aar'
+
+    // For get location of user
+    implementation 'com.google.android.gms:play-services-location:17.1.0'
+
+    // For firebase remote config
+    implementation 'com.google.firebase:firebase-config:20.0.1'
+
+    // For firebase notifications
+    implementation 'com.google.firebase:firebase-messaging:21.0.0'
+
+    // For firebase analytics
+    implementation 'com.google.firebase:firebase-analytics:18.0.0'
+
+    // For firebase crash reports
+    implementation 'com.google.firebase:firebase-crashlytics:17.3.0'
+
+    // For Ads
+    implementation 'com.google.android.gms:play-services-ads:19.5.0'
+
+    // For in app update
+    implementation 'com.google.android.play:core:1.9.0'
+
+    // For social login
+    implementation 'com.google.firebase:firebase-auth:20.0.1'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+    implementation 'com.facebook.android:facebook-android-sdk:5.15.3'
+
+    // For ExoPlayer
+    implementation 'androidx.mediarouter:mediarouter:1.2.0'
+    implementation 'com.google.android.exoplayer:exoplayer:2.11.3'
+    implementation 'com.google.android.exoplayer:extension-cast:2.11.3'
+    implementation 'com.google.android.exoplayer:extension-ima:2.11.1'
+
+    //For branch.io
+    implementation 'io.branch.sdk.android:library:5.0.3'
+    implementation 'com.google.firebase:firebase-appindexing:19.1.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
+
+    //for pie chart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    //for seek indicator
+    implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'
+
+    // For bug snag error monitoring
+    implementation "com.bugsnag:bugsnag-android:5.3.0"
+
+    annotationProcessor 'androidx.room:room-compiler:2.2.5'
+}
+apply plugin: 'com.google.gms.google-services'

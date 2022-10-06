@@ -1,0 +1,176 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/user_control_mask"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/userLL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blackOverlayColor"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/nameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You"
+            android:textColor="@color/colorWhite"
+            android:textSize="9sp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userIV"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_vector_default_profile"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_width="2dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/userAfterRL"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#5B5A5A"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/userAfterIV"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_vector_default_profile_square"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/answerRL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/correct_answer_border_bg"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/answerIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_vector_correct"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/scoreTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/rounded_pink_bgcolor"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/userNameTV"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/gradient_bg"
+        android:gravity="center"
+        android:paddingVertical="3dp"
+        android:singleLine="true"
+        android:text="You"
+        android:textColor="#F0ECEC"
+        android:textSize="9sp" />
+
+    <LinearLayout
+        android:id="@+id/readyLL"
+        android:layout_width="50dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/userNameTV"
+        android:background="@drawable/gradient_bg"
+        android:gravity="center"
+        android:paddingVertical="1dp">
+
+        <TextView
+            android:id="@+id/readyTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="READY"
+            android:textColor="@color/colorAccent"
+            android:textSize="8sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/readyRB"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="-8dp"
+            android:layout_marginEnd="-12dp"
+            android:checked="true"
+            android:scaleX="0.6"
+            android:scaleY="0.6" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/removeTV"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/gradient_bg"
+        android:gravity="center"
+        android:paddingVertical="3dp"
+        android:text="Remove"
+        android:textColor="#F3F3F2"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/default_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:contentDescription="DEFAULT_AVATAR"
+        android:src="@drawable/icon_default_avatar"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:contentDescription="VIDEO_INDICATOR"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/video_info_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/video_info_metadata"
+            style="@style/NotificationUIText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/blackOverlayColor"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp"
+    tools:context=".joinRoom.ui.JoinRoomActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/titleImageRL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/withOutQuizCV"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                app:cardBackgroundColor="@color/colorBackground"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/adminIV"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/placeholder"
+                        app:civ_border_color="@color/colorHeader"
+                        app:civ_border_width="3dp" />
+
+                    <TextView
+                        android:id="@+id/invitationTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/withQuizLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/adminIV2"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/placeholder"
+                        app:civ_border_color="@color/colorHeader"
+                        app:civ_border_width="2dp" />
+
+                    <TextView
+                        android:id="@+id/invitationTV2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:paddingEnd="70dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center_vertical"
+                        android:textColor="#8C8A8A"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@color/colorBackground">
+
+                    <ImageView
+                        android:id="@+id/quizIV"
+                        android:layout_width="110dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/placeholder" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginVertical="5dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/quizCategoryTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="11sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="1dp"
+                                android:src="@drawable/ic_arrow" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/quizTitleTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/roboto_medium"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/iconsLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleImageRL"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/micRL"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/circle_gender_bg">
+
+                <ImageView
+                    android:id="@+id/micIV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_vector_join_room_mic" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/cameraRL"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/circle_gender_bg">
+
+                <ImageView
+                    android:id="@+id/cameraIV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_vector_join_room_video" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iconsLL"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/joinTV"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/rounded_pink_bgcolor"
+                android:fontFamily="@font/roboto_black"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:text="Join"
+                android:textColor="@color/colorAccent"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/declineTV"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/decline_bg"
+                android:fontFamily="@font/roboto_black"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:text="Decline"
+                android:textColor="@color/colorDecline"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

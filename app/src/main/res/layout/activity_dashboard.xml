@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".dashboard.ui.DashboardActivity">
+
+    <RelativeLayout
+        android:id="@+id/parentRL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/frame_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottomAdView" />
+
+        <RelativeLayout
+            android:id="@+id/bottomAdView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/navigation"
+            android:gravity="center_horizontal" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation"
+            style="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="?android:attr/windowBackground"
+            android:foreground="?attr/selectableItemBackground"
+            android:visibility="gone"
+            app:itemBackground="@color/colorBottomBar"
+            app:itemIconSize="20dp"
+            app:itemIconTint="@color/bottom_nav_icon_bg"
+            app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+            app:itemTextAppearanceInactive="@style/BottomNavigationView"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/navigation" />
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spinKit"
+            style="@style/SpinKitView.ThreeBounce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:SpinKit_Color="@color/colorPrimary" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/thankYouTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Thank You"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        android:visibility="gone" />
+</RelativeLayout>

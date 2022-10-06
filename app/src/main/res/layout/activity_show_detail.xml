@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".showDetail.ui.ShowDetailActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomAdView">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/showIV"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/backLL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="15dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/backIV"
+                    android:layout_width="15dp"
+                    android:layout_height="18dp"
+                    android:rotation="180"
+                    android:src="@drawable/header_arrow"
+                    android:tint="@color/colorWhite" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/showInfoRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="360dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/editor_pick_bg"
+                android:padding="20dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/showNameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorHeader"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/showDescTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showNameTV"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/followShowNameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/showDescTV"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="11sp" />
+
+                <RelativeLayout
+                    android:id="@+id/followShowRL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/followShowNameTV"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/follow_show_bg"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="7dp"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="7dp">
+
+                    <TextView
+                        android:id="@+id/followTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Follow"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/followShowIV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/followTV"
+                        android:src="@drawable/ic_vector_follow_show" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/middleAdView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/showInfoRL"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/allFromNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/middleAdView"
+                android:layout_margin="10dp"
+                android:textColor="@color/colorHeader"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/showVideosRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/allFromNameTV"
+                android:layout_marginLeft="10dp" />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spinKit"
+        style="@style/SpinKitView.ThreeBounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:SpinKit_Color="@color/colorPrimary" />
+
+    <RelativeLayout
+        android:id="@+id/bottomAdView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal" />
+</RelativeLayout>

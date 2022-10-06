@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".allVideo.ui.AllVideoActivity">
+
+    <RelativeLayout
+        android:id="@+id/topAdView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomAdView"
+        android:layout_below="@+id/topAdView"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:id="@+id/backLL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="25dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:id="@+id/backIV"
+                android:layout_width="15dp"
+                android:layout_height="18dp"
+                android:rotation="180"
+                android:src="@drawable/header_arrow"
+                android:tint="@color/colorWhite" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/titleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/allVideoRV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomAdView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal" />
+</RelativeLayout>

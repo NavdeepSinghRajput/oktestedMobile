@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
+    android:minHeight="450dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBottomBar"
+            android:padding="15dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userIV"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_vector_default_profile" />
+
+            <TextView
+                android:id="@+id/userNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/userIV"
+                android:textColor="#999999"
+                android:textSize="9sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/badgeIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@+id/userNameTV"
+                android:src="@drawable/ic_vector_verified_badge"/>
+
+            <TextView
+                android:id="@+id/commentTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userNameTV"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/commentReactionLL"
+                android:layout_toRightOf="@+id/userIV"
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/replyCountTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/commentTV"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/commentReactionLL"
+                android:layout_toRightOf="@+id/userIV"
+                android:textColor="@color/colorAccent"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/commentReactionLL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@+id/sideMenuRL"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/commentLikeIV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_vector_comment_heart" />
+
+                <TextView
+                    android:id="@+id/commentLikeTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#A6A6A6"
+                    android:textSize="8sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/sideMenuRL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp">
+
+                <ImageView
+                    android:id="@+id/sideMenuIV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_vector_menu" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
+
+            <EditText
+                android:id="@+id/replyET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/sendReplyIV"
+                android:background="@android:color/transparent"
+                android:hint="Add a public reply..."
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:textColor="#9A9A9A"
+                android:textColorHint="#9A9A9A"
+                android:textSize="11sp" />
+
+            <ImageView
+                android:id="@+id/sendReplyIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                android:src="@drawable/ic_vector_send" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#80727272" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/replyRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" />
+    </LinearLayout>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/replyBottomProgress"
+        style="@style/SpinKitView.ThreeBounce"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        app:SpinKit_Color="@color/colorPrimary" />
+</RelativeLayout>

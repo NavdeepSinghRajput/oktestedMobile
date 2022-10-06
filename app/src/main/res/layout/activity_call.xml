@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <RelativeLayout
+        android:id="@+id/parentRL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:keepScreenOn="true">
+
+        <RelativeLayout
+            android:id="@+id/videoViewRL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.oktested.videoCall.ui.layout.GridVideoViewContainer
+                android:id="@+id/grid_video_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/beforeRL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/startQuizTV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="175dp"
+                android:background="@drawable/start_bg"
+                android:fontFamily="@font/roboto_black"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:text="Start quiz"
+                android:textColor="@color/colorLightGrey"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/pickQuizTV"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="60dp"
+                android:background="@drawable/rounded_pink_bgcolor"
+                android:fontFamily="@font/roboto_black"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:text="Pick a quiz"
+                android:textColor="@color/colorAccent"
+                android:textSize="10sp" />
+
+            <LinearLayout
+                android:id="@+id/videoControlsLL"
+                android:layout_width="46dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/video_controls_bg"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/addFriendIV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp"
+                    android:src="@drawable/ic_add" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onSwitchCameraClicked"
+                    android:paddingTop="30dp"
+                    android:paddingBottom="15dp"
+                    android:src="@drawable/ic_camera_action" />
+
+                <ImageView
+                    android:id="@+id/voiceMuteIV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:src="@drawable/ic_mic_action" />
+
+                <ImageView
+                    android:id="@+id/videoMuteIV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="30dp"
+                    android:src="@drawable/ic_video_action" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/videoControlsRL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/video_unselect_menu_bg">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_video_control_menu" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/afterSV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/childLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/indicatorLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/questionCV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/questionImageCV"
+                        android:layout_marginHorizontal="30dp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            android:id="@+id/questionTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="40dp"
+                            android:gravity="center"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/questionImageCV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="30dp"
+                        android:visibility="gone"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:id="@+id/questionIV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/quiz_placeholder" />
+
+                        <ImageView
+                            android:id="@+id/loadingIV"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/quiz_placeholder"
+                            android:visibility="gone" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/relative"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/questionCV"
+                        android:layout_marginTop="-15dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardElevation="0dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/optionsRV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </androidx.cardview.widget.CardView>
+
+                    <RelativeLayout
+                        android:id="@+id/timerRL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/relative">
+
+                        <ProgressBar
+                            android:id="@+id/timerProgressBar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:layout_marginHorizontal="50dp"
+                            android:layout_marginTop="20dp"
+                            android:progressDrawable="@drawable/timer_progress_bar" />
+
+                        <RelativeLayout
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="13dp"
+                            android:layout_marginRight="30dp"
+                            android:background="@drawable/progress_thumb_bg">
+
+                            <TextView
+                                android:id="@+id/timerTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="10"
+                                android:textColor="#343434"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:id="@+id/resultRL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#CC000000"
+            android:clickable="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/parentLL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/backIV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:src="@drawable/ic_vector_back_arrow" />
+
+                    <ImageView
+                        android:id="@+id/shareIV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:padding="20dp"
+                        android:src="@drawable/ic_vector_share"
+                        android:tint="@color/colorWhite" />
+                </RelativeLayout>
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/moreQuizNSV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/winnerTV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="25dp"
+                            android:text="WINNER"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:weightSum="2">
+
+                            <RelativeLayout
+                                android:id="@+id/oneRL"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal">
+
+                                <TextView
+                                    android:id="@+id/oneNameTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:gravity="center_horizontal"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:id="@+id/oneIV"
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_below="@+id/oneNameTV"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="10dp"
+                                    android:src="@drawable/placeholder"
+                                    app:civ_border_color="@color/colorHeader"
+                                    app:civ_border_width="2dp" />
+
+                                <TextView
+                                    android:id="@+id/oneRankTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/oneIV"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="-15dp"
+                                    android:background="@drawable/rank_bg"
+                                    android:gravity="center"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <RatingBar
+                                    android:id="@+id/oneRatingBar"
+                                    style="?android:attr/ratingBarStyleSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/oneRankTV"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="5dp"
+                                    android:isIndicator="true"
+                                    android:progressBackgroundTint="#717171" />
+
+                                <TextView
+                                    android:id="@+id/oneScoreTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/oneRatingBar"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="2dp"
+                                    android:textColor="@color/colorHeader"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/oneScoreTV"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="2dp">
+
+                                    <TextView
+                                        android:id="@+id/text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:drawableLeft="@drawable/ic_vector_avg_time"
+                                        android:drawablePadding="5dp"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:gravity="center_vertical"
+                                        android:text="Avg time : "
+                                        android:textColor="#838181"
+                                        android:textSize="8sp" />
+
+                                    <TextView
+                                        android:id="@+id/oneTimeTV"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toRightOf="@+id/text"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="8sp" />
+                                </RelativeLayout>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/twoRL"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal">
+
+                                <TextView
+                                    android:id="@+id/twoNameTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:gravity="center_horizontal"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:id="@+id/twoIV"
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_below="@+id/twoNameTV"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="10dp"
+                                    android:src="@drawable/placeholder"
+                                    app:civ_border_color="@color/colorHeader"
+                                    app:civ_border_width="2dp" />
+
+                                <TextView
+                                    android:id="@+id/twoRankTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/twoIV"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="-15dp"
+                                    android:background="@drawable/rank_bg"
+                                    android:gravity="center"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <RatingBar
+                                    android:id="@+id/twoRatingBar"
+                                    style="?android:attr/ratingBarStyleSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/twoRankTV"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="5dp"
+                                    android:isIndicator="true"
+                                    android:progressBackgroundTint="#717171" />
+
+                                <TextView
+                                    android:id="@+id/twoScoreTV"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/twoRatingBar"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="2dp"
+                                    android:textColor="@color/colorHeader"
+                                    android:textSize="11sp"
+                                    android:textStyle="bold" />
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/twoScoreTV"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginTop="2dp">
+
+                                    <TextView
+                                        android:id="@+id/text2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:drawableLeft="@drawable/ic_vector_avg_time"
+                                        android:drawablePadding="5dp"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:gravity="center_vertical"
+                                        android:text="Avg time : "
+                                        android:textColor="#838181"
+                                        android:textSize="8sp" />
+
+                                    <TextView
+                                        android:id="@+id/twoTimeTV"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toRightOf="@+id/text2"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="8sp" />
+                                </RelativeLayout>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/resultRV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="#5B5A5A" />
+
+                        <RelativeLayout
+                            android:id="@+id/moreQuizRL"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/headerTV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_marginBottom="10dp"
+                                android:text="More like this"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="10dp"
+                                android:layout_height="12dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_toRightOf="@+id/headerTV"
+                                android:src="@drawable/header_arrow"
+                                android:tint="@color/colorAccent" />
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/moreQuizRV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+            </LinearLayout>
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/spinKit"
+                style="@style/SpinKitView.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                app:SpinKit_Color="@color/colorPrimary" />
+
+            <LinearLayout
+                android:id="@+id/inflatedLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:use_controller="false" />
+
+    <LinearLayout
+        android:id="@+id/buildQuizLL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:weightSum="2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/buildQuizIV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/buildTitleTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto_black"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/buildMessageTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:text="Building quiz"
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/buildSpinKit"
+                style="@style/SpinKitView.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                app:SpinKit_Color="@color/colorWhite" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/add_friend_room_bottomsheet" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

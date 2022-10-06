@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:id="@+id/upperRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/communityImage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder" />
+
+        <TextView
+            android:id="@+id/communityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/communityImage"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/communityName"
+            android:text=" posted a link"
+            android:textColor="#999999"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/postDateTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/communityName"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/communityImage"
+            android:textColor="#999999"
+            android:textSize="8sp" />
+
+        <TextView
+            android:id="@+id/descriptionTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/communityImage"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp" />
+
+        <com.oktested.utils.ScaleImageView
+            android:id="@+id/postIV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/descriptionTV"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/linkTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/postIV"
+            android:background="@color/colorPrimary"
+            android:ellipsize="end"
+            android:padding="8dp"
+            android:maxLines="2"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:textSize="11sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/upperRL">
+
+        <TextView
+            android:id="@+id/postLikeTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:drawableLeft="@drawable/ic_vector_comment_heart"
+            android:drawablePadding="5dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:textColor="#717171"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/postShareTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/postLikeTV"
+            android:drawableLeft="@drawable/ic_vector_post_share"
+            android:drawablePadding="5dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="20dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="20dp"
+            android:textColor="#717171"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/postCommentTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:drawableLeft="@drawable/ic_vector_post_comment"
+            android:drawablePadding="5dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:textColor="#717171"
+            android:textSize="11sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/bottomRL"
+        android:background="#80727272" />
+</RelativeLayout>

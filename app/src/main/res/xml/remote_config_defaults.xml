@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>app_setting_android</key>
+        <value>{
+            "is_community_visible": true
+            }</value>
+    </entry>
+
+    <entry>
+        <key>app_update_android</key>
+        <value>{
+            "version_name": "2.0.7",
+            "force_update": false,
+            "message": "Hey there, we've fixed a few things in the App ...",
+            "title": "New version available",
+            "version_code": 23
+            }</value>
+    </entry>
+
+    <entry>
+        <key>ads_setting_android</key>
+        <value>{
+            "enable": false,
+            "data": [
+            {
+            "ad_type": "hp_bottom_banner_ad",
+            "value": {
+            "status": true,
+            "ad_code": "/145115460/OkTested-AOS/OkTested_AOS_HP_BTF",
+            "is_mid_ad": false
+            }
+            },
+            {
+            "ad_type": "hp_top_banner_ad",
+            "value": {
+            "status": false,
+            "ad_code": "/145115460/OkTested-AOS/OkTested_AOS_HP_ATF",
+            "is_mid_ad": false
+            }
+            },
+            {
+            "ad_type": "bottom_banner_ad",
+            "value": {
+            "status": true,
+            "ad_code": "/145115460/OkTested-AOS/OkTested_AOS_ROS_BTF",
+            "is_mid_ad": false
+            }
+            },
+            {
+            "ad_type": "top_banner_ad",
+            "value": {
+            "status": true,
+            "ad_code": "/145115460/OkTested-AOS/OkTested_AOS_ROS_ATF",
+            "is_mid_ad": false
+            }
+            },
+            {
+            "ad_type": "middle_banner_ad",
+            "value": {
+            "status": true,
+            "ad_code": "/145115460/OkTested-AOS/OkTested_AOS_ROS_MID",
+            "is_mid_ad": true
+            }
+            },
+            {
+            "ad_type": "interstitial_ad",
+            "value": {
+            "status": true,
+            "ad_code": "/145115460/OkTested-AOS/OkTested_AOS_INT",
+            "count": 3
+            }
+            },
+            {
+            "ad_type": "exit_interstitial_ad",
+            "value": {
+            "status": true,
+            "ad_code": "/145115460/OkTested-AOS/OkTested_AOS_INT_EXT"
+            }
+            },
+            {
+            "ad_type": "pre_roll_ima_ad",
+            "value": {
+            "status": true,
+            "ad_code": "https://pubads.g.doubleclick.net/gampad/ads?iu=/145115460/SW_ENG_Test_AdUnits/SW_App_Video_VAST_Test_Ad_Unit&amp;description_url=https%3A%2F%2Fwww.scoopwhoop.com%2F&amp;amp;tfcd=0&amp;amp;npa=0&amp;amp;sz=400x300%7C640x360%7C640x480&amp;amp;gdfp_req=1&amp;amp;output=vast&amp;amp;unviewed_position_start=1&amp;env=vp&amp;impl=s&amp;correlator="
+            }
+            },
+            {
+            "ad_type": "mid_roll_ima_ad",
+            "value": {
+            "status": true,
+            "ad_code": "https://pubads.g.doubleclick.net/gampad/ads?iu=/145115460/SW_ENG_Test_AdUnits/SW_App_Video_VAST_Test_Ad_Unit_MidRoll&amp;description_url=https%3A%2F%2Fwww.scoopwhoop.com%2F&amp;tfcd=0&amp;npa=0&amp;sz=400x300%7C640x360%7C640x480&amp;gdfp_req=1&amp;output=vast&amp;unviewed_position_start=1&amp;env=vp&amp;impl=s&amp;correlator="
+            }
+            },
+            {
+            "ad_type": "post_roll_ima_ad",
+            "value": {
+            "status": true,
+            "ad_code": "https://pubads.g.doubleclick.net/gampad/ads?iu=/145115460/SW_ENG_Test_AdUnits/SW_App_Video_VAST_Test_Ad_Unit_PostRoll&amp;description_url=https%3A%2F%2Fwww.scoopwhoop.com%2F&amp;tfcd=0&amp;npa=0&amp;sz=400x300%7C640x360%7C640x480&amp;gdfp_req=1&amp;output=vast&amp;unviewed_position_start=1&amp;env=vp&amp;impl=s&amp;correlator="
+            }
+            }
+            ]
+            }</value>
+    </entry>
+</defaultsMap>

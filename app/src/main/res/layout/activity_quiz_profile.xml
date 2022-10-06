@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".quizProfile.ui.QuizProfileActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/parentLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:text="Your Statistics"
+                    android:textColor="#656562"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:background="#403F3F" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_profile_bgcolor"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/badgeImage"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="65dp"
+                        android:src="@drawable/placeholder" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:layout_weight="1"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/currentLevel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
+                                android:text="Lv. 1"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+
+                            <com.warkiz.widget.IndicatorStayLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <com.warkiz.widget.IndicatorSeekBar
+                                    android:id="@+id/seek_bar_indicators"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:isb_indicator_content_layout="@layout/custom_indicator"
+                                    app:isb_max="100"
+                                    app:isb_min="-1.0"
+                                    app:isb_only_thumb_draggable="false"
+                                    app:isb_progress="50"
+                                    app:isb_seek_smoothly="true"
+                                    app:isb_show_indicator="custom"
+                                    app:isb_thumb_adjust_auto="false"
+                                    app:isb_thumb_color="#32FFCE"
+                                    app:isb_track_background_color="#444444"
+                                    app:isb_track_background_size="10dp"
+                                    app:isb_track_progress_color="#32FFCE"
+                                    app:isb_track_progress_size="10dp"
+                                    app:isb_track_rounded_corners="true"
+                                    app:isb_user_seekable="false" />
+                            </com.warkiz.widget.IndicatorStayLayout>
+
+                            <TextView
+                                android:id="@+id/upcommingLevel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
+                                android:text="Lv. 2"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="10sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_profile_bgcolor"
+                    android:gravity="center"
+                    android:paddingVertical="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_vector_average_accuracy"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:text="Avg accuracy : "
+                        android:textColor="#9C9C9C"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/questionPoint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/colorHeader"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_profile_bgcolor"
+                    android:gravity="center"
+                    android:paddingVertical="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_vector_average_time"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:text="Avg time : "
+                        android:textColor="#9C9C9C"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/timePerQuestion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:text="Most Played Categories"
+                    android:textColor="#656562"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:background="#403F3F" />
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/chart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_above="@+id/seekBar1" />
+
+            <TextView
+                android:id="@+id/noChartText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="50dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Play a Quiz to see your stats"
+                android:textColor="#A9A9A5"
+                android:textSize="10sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:text="Play Again"
+                    android:textColor="#656562"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:background="#403F3F" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/recentQuiz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="50dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="You haven't played any quizzes yet"
+                android:textColor="#A9A9A5"
+                android:textSize="10sp"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/quizPlayedRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="-10dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spinKit"
+        style="@style/SpinKitView.ThreeBounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:SpinKit_Color="@color/colorPrimary" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

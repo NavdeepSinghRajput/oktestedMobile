@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
+
+    <TextView
+        android:id="@+id/titleTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/copyIV"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="#717070"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/copyIV"
+        android:layout_width="18dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:rotation="315"
+        android:src="@drawable/right_arrow" />
+</RelativeLayout>

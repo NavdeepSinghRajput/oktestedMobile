@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/editorPickRL"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/editorPickIV"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/editor_pick_bg"
+        android:padding="15dp">
+
+        <RelativeLayout
+            android:id="@+id/topicRL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/playLL">
+
+            <TextView
+                android:id="@+id/topicTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:visibility="gone"
+                android:layout_toRightOf="@id/topicTV"
+                android:src="@drawable/arrow" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/titleTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/topicRL"
+            android:layout_marginTop="5dp"
+            android:layout_toLeftOf="@+id/playLL"
+            android:fontFamily="@font/roboto_medium"
+            android:maxLines="3"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/playLL"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/circle_drawable"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/play_icon" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

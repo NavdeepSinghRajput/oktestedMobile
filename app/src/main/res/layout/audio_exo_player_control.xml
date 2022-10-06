@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/playLL"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/circle_drawable"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@id/exo_play"
+            style="@style/ExoMediaButton.Play"
+            android:src="@drawable/ic_vector_music_play"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@id/exo_pause"
+            style="@style/ExoMediaButton.Pause"
+            android:layout_width="24dp"
+            android:layout_height="27dp"
+            android:src="@drawable/ic_vector_pause"
+            android:tint="@color/colorPrimary" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/playLL"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/audioNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/audioCategoryTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp">
+
+            <com.google.android.exoplayer2.ui.DefaultTimeBar
+                android:id="@id/exo_progress"
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                app:bar_height="14dp"
+                app:scrubber_enabled_size="0dp"
+                app:scrubber_dragged_size="0dp"
+                app:scrubber_disabled_size="0dp"
+                app:buffered_color="@android:color/transparent"
+                app:played_color="@color/colorPrimary"
+                app:unplayed_color="@android:color/transparent" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_vector_audio_bar"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:id="@id/exo_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:includeFontPadding="false"
+                android:textColor="#717171"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/separatorTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:includeFontPadding="false"
+                android:text="/"
+                android:textColor="#717171"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@id/exo_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:includeFontPadding="false"
+                android:textColor="#717171"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

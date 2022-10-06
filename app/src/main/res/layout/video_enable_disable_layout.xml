@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#302F2F"
+        android:paddingStart="20dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="13dp"
+        android:text="Creating a quiz room"
+        android:textColor="@color/colorHeader"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:id="@+id/micRL"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/circle_gender_bg">
+
+            <ImageView
+                android:id="@+id/micIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_vector_join_room_mic" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/cameraRL"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle_gender_bg">
+
+            <ImageView
+                android:id="@+id/cameraIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_vector_join_room_video" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nextTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/rounded_pink_bgcolor"
+        android:fontFamily="@font/roboto_medium"
+        android:paddingHorizontal="35dp"
+        android:paddingVertical="8dp"
+        android:text="Next"
+        android:textColor="@color/colorAccent"
+        android:textSize="10sp" />
+
+</LinearLayout>

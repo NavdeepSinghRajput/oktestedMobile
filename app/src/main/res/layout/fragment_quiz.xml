@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:scrollbars="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/userDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <TextView
+                        android:id="@+id/userName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/userProfilePic"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Welcome"
+                        android:textColor="@color/colorLightGrey"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/userProfilePic"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/threeDots"
+                        android:src="@drawable/ic_vector_default_profile"
+                        app:civ_border_color="@color/colorPrimary"
+                        app:civ_border_width="2dp" />
+
+                    <ImageView
+                        android:id="@+id/threeDots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:src="@drawable/three_dots_pink" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/addFriendLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:visibility="gone">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:layout_marginVertical="5dp"
+                        android:visibility="visible"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:cardElevation="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorAccent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_invite_frd_icon"
+                                android:visibility="invisible" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_toLeftOf="@+id/addFriends"
+                                android:layout_toRightOf="@+id/icon"
+                                android:text="@string/play_agains"
+                                android:textColor="@color/colorblack"
+                                android:textSize="@dimen/_8sdp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/addFriends"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/rounded_pink_bgcolor"
+                                android:paddingHorizontal="20dp"
+                                android:paddingVertical="10dp"
+                                android:text="Add friends"
+                                android:textColor="#FFEC41"
+                                android:textSize="@dimen/_10sdp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingHorizontal="@dimen/_10sdp"
+                        android:src="@drawable/ic_invite_frd_icon" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/friendList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/quizFriendRoom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/addFriedTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="Add friends to a Quiz room"
+                            android:textColor="@color/colorHeader"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="10dp"
+                            android:background="#403F3F" />
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/friendListRecylerView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/quizFriendRoom" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:orientation="horizontal">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/inviteFriends"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/ic_friend_quiz" />
+
+                        <TextView
+                            android:id="@+id/viewAllFriend"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:background="@drawable/rounded_pink_bgcolor"
+                            android:gravity="center"
+                            android:paddingHorizontal="30dp"
+                            android:text="View all"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/quizzesTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Quizzes"
+                        android:textColor="@color/colorHeader"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="#403F3F" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/quizesSectionRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/quizzesTitle" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spinKit"
+        style="@style/SpinKitView.ThreeBounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:SpinKit_Color="@color/colorPrimary" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".anchorDetail.ui.AnchorDetailActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomAdView">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/anchorIV"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder" />
+
+            <LinearLayout
+                android:id="@+id/backLL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="15dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/backIV"
+                    android:layout_width="15dp"
+                    android:layout_height="18dp"
+                    android:rotation="180"
+                    android:src="@drawable/header_arrow"
+                    android:tint="@color/colorWhite" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/anchorInfoRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="360dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/editor_pick_bg"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/anchorNameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorHeader"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/anchorDescTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/anchorNameTV"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/followAnchorNameTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/anchorDescTV"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="11sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/followAnchorNameTV"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/followRL"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/circle_gender_bg">
+
+                        <ImageView
+                            android:id="@+id/followIV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_vector_follow_actor" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/instagramRL"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/circle_gender_bg"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_vector_instagram" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/twitterRL"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/circle_gender_bg"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_vector_twitter" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/middleAdView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/anchorInfoRL"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/videoFeatureTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/middleAdView"
+                android:layout_margin="10dp"
+                android:textColor="@color/colorHeader"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/anchorVideosRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videoFeatureTV"
+                android:layout_marginLeft="10dp" />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottomAdView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal" />
+</RelativeLayout>

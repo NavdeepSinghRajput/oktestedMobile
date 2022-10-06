@@ -1,0 +1,149 @@
+{
+	"status": 1,
+	"data": [
+		{
+			"section_type": "app_exclusive",
+			"value": {
+				"section_title": "App Exclusive",
+				"design_type": "",
+				"slug": ""
+			}
+		},
+		{
+			"section_type": "recently_added",
+			"value": {
+				"section_title": "Recently Added",
+				"design_type": "",
+				"slug": ""
+			}
+		},
+		{
+			"section_type": "trending",
+			"value": {
+				"section_title": "Trending",
+				"design_type": "",
+				"slug": ""
+			}
+		},
+		{
+			"section_type": "most_viewed",
+			"value": {
+				"section_title": "Most Viewed",
+				"design_type": "",
+				"slug": ""
+			}
+		},
+		{
+			"section_type": "shows",
+			"value": {
+				"section_title": "Shows",
+				"design_type": "",
+				"slug": ""
+			}
+		},
+		{
+			"section_type": "anchors",
+			"value": {
+				"section_title": "Anchors",
+				"design_type": "",
+				"slug": ""
+			}
+		},
+		{
+			"section_type": "more_shows",
+			"value": {
+				"section_title": "",
+				"design_type": "",
+				"slug": "quizzes"
+			}
+		},
+		{
+			"section_type": "more_shows",
+			"value": {
+				"section_title": "",
+				"design_type": "",
+				"slug": "broadies"
+			}
+		},
+		{
+			"section_type": "more_shows",
+			"value": {
+				"section_title": "",
+				"design_type": "",
+				"slug": "newchallenges"
+			}
+		},
+		{
+			"section_type": "more_shows",
+			"value": {
+				"section_title": "",
+				"design_type": "",
+				"slug": "which-is-what"
+			}
+		},
+		{
+			"section_type": "more_shows",
+			"value": {
+				"section_title": "",
+				"design_type": "",
+				"slug": "cook-off"
+			}
+		},
+		{
+			"section_type": "more_shows",
+			"value": {
+				"section_title": "",
+				"design_type": "",
+				"slug": "celebrities"
+			}
+		},
+		{
+			"section_type": "more_shows",
+			"value": {
+				"section_title": "",
+				"design_type": "",
+				"slug": "cheapvsexpensive"
+			}
+		},
+		{
+			"section_type": "more_shows",
+			"value": {
+				"section_title": "",
+				"design_type": "",
+				"slug": "mytreat"
+			}
+		},
+		{
+			"section_type": "sw_shows",
+			"value": {
+				"section_title": "More From ScoopWhoop",
+				"design_type": "",
+				"slug": ""
+			}
+		},
+		{
+			"section_type": "sw_shows_video",
+			"value": {
+				"section_title": "",
+				"design_type": "",
+				"slug": "scoopwhoop-townhall"
+			}
+		},
+		{
+			"section_type": "sw_shows_video",
+			"value": {
+				"section_title": "",
+				"design_type": "",
+				"slug": "mannmaemotion"
+			}
+		},
+		{
+			"section_type": "sw_shows_video",
+			"value": {
+				"section_title": "",
+				"design_type": "",
+				"slug": "sw-cafe"
+			}
+		}
+	]
+}
